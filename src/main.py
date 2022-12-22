@@ -248,7 +248,8 @@ item_check = pystray.MenuItem(
 
 item_mismatches = pystray.MenuItem(
                             'Last Mismatches',
-                            on_clicked_mismatch)
+                            on_clicked_mismatch,
+                            default=True)
 
 item_dictionary = pystray.MenuItem(
                             'Change Dictionary',
@@ -258,7 +259,8 @@ icon = pystray.Icon(
     'Keyboard en-fa',
     title="Keyboard Layout Checker",
     icon=img_.open("icon/keyboard_icon.png"),
-    menu=pystray.Menu(item_check, item_mismatches, item_dictionary, item_exit))
+    menu=pystray.Menu(item_check, item_mismatches, item_dictionary, item_exit),
+    HAS_DEFAULT_ACTION = True)
 
 icon.run()
 
